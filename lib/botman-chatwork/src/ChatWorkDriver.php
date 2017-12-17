@@ -43,7 +43,6 @@ class ChatWorkDriver extends HttpDriver
         $this->event = Collection::make($this->payload->get('webhook_event'));
 
         $this->headers = $request->headers;
-        //        info($this->headers->get('X-ChatWorkWebhookSignature'));
     }
 
     /**
@@ -53,8 +52,6 @@ class ChatWorkDriver extends HttpDriver
      */
     public function matchesRequest()
     {
-        //        info($this->payload->get('webhook_event_type'));
-
         return $this->validateSignature() && $this->payload->get('webhook_event_type') === 'message_created';
     }
 
@@ -175,15 +172,15 @@ class ChatWorkDriver extends HttpDriver
      */
     protected function validateSignature()
     {
-        $known = '';
-        if ($this->headers->has('X-ChatWorkWebhookSignature')) {
-            $known = $this->headers->get('X-ChatWorkWebhookSignature');
-        }
-        info($known);
+        $known = $this->headers->get('X-ChatWorkWebhookSignature', '');
 
         $hash = hash_hmac('sha256', $this->content, base64_decode($this->config->get('webhook_token')), true);
         $hash = base64_encode($hash);
-        info($hash);
+
+        info(hash_equals(
+            $known,
+            $hash
+        ));
 
         return hash_equals(
             $known,
