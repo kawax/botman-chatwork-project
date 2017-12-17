@@ -123,6 +123,8 @@ class ChatWorkDriver extends HttpDriver
 
         info($payload);
 
+        info($this->config->get('api_token'));
+
         $res = $this->http->post(
             self::API_ENDPOINT . 'rooms/' . $this->event->get('room_id') . '/messages',
             [],
@@ -170,8 +172,6 @@ class ChatWorkDriver extends HttpDriver
         $headers = [
             'X-ChatWorkToken' => $this->config->get('api_token'),
         ];
-
-        info($this->config->get('api_token'));
 
         return $this->http->post(self::API_ENDPOINT . $endpoint, [], $parameters, $headers);
     }
