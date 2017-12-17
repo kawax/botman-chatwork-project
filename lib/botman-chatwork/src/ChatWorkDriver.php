@@ -171,6 +171,8 @@ class ChatWorkDriver extends HttpDriver
             'X-ChatWorkToken' => $this->config->get('api_token'),
         ];
 
+        info($this->config->get('api_token'));
+
         return $this->http->post(self::API_ENDPOINT . $endpoint, [], $parameters, $headers);
     }
 
