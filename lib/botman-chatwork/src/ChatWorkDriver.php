@@ -181,7 +181,7 @@ class ChatWorkDriver extends HttpDriver
         }
         info($known);
 
-        $hash = hash_hmac('sha256', $this->content, base64_decode($this->config->get('webhook_token')));
+        $hash = hash_hmac('sha256', $this->content, base64_decode($this->config->get('webhook_token')), true);
         $hash = base64_encode($hash);
         info($hash);
 
