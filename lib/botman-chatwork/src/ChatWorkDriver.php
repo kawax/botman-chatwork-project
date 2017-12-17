@@ -122,10 +122,15 @@ class ChatWorkDriver extends HttpDriver
         ];
 
         info($payload);
-        return $this->http->post(
+
+        $res = $this->http->post(
             self::API_ENDPOINT . 'rooms/' . $this->event->get('room_id') . '/messages',
             $headers,
             $payload);
+
+        info($res);
+
+        return $res;
     }
 
     /**
