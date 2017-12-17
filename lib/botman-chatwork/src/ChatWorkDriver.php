@@ -55,7 +55,7 @@ class ChatWorkDriver extends HttpDriver
     {
         info($this->payload->get('webhook_event_type'));
 
-        return $this->payload->get('webhook_event_type') === 'message_created';
+        return $this->validateSignature() && $this->payload->get('webhook_event_type') === 'message_created';
     }
 
     /**
@@ -181,6 +181,7 @@ class ChatWorkDriver extends HttpDriver
         }
 
         $hash = hash_hmac('sha256', $this->content, base64_decode($this->config->get('webhook_token')));
+        $hash = base64_encode($hash);
         info($hash);
 
         return hash_equals(
