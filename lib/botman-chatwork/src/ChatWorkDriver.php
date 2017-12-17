@@ -172,7 +172,10 @@ class ChatWorkDriver extends HttpDriver
      */
     protected function validateSignature()
     {
-        $known = $this->headers->get('X-ChatWorkWebhookSignature');
+        $known = '';
+        if ($this->headers->has('X-ChatWorkWebhookSignature')) {
+            $this->headers->get('X-ChatWorkWebhookSignature');
+        }
 
         return hash_equals(
             $known,
