@@ -121,6 +121,7 @@ class ChatWorkDriver extends HttpDriver
             'X-ChatWorkToken' => $this->config->get('api_token'),
         ];
 
+        info($payload);
         return $this->http->post(
             self::API_ENDPOINT . 'rooms/' . $this->event->get('room_id') . '/messages',
             $headers,
@@ -176,11 +177,6 @@ class ChatWorkDriver extends HttpDriver
 
         $hash = hash_hmac('sha256', $this->content, base64_decode($this->config->get('webhook_token')), true);
         $hash = base64_encode($hash);
-
-        info(hash_equals(
-            $known,
-            $hash
-        ));
 
         return hash_equals(
             $known,
