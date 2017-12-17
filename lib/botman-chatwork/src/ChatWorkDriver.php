@@ -43,6 +43,7 @@ class ChatWorkDriver extends HttpDriver
         $this->event = Collection::make($this->payload->get('webhook_event'));
 
         $this->headers = $request->headers;
+        info($this->headers);
     }
 
     /**
@@ -52,6 +53,8 @@ class ChatWorkDriver extends HttpDriver
      */
     public function matchesRequest()
     {
+        info($this->payload->get('webhook_event_type'));
+
         return $this->validateSignature() && $this->payload->get('webhook_event_type') === 'message_created';
     }
 
