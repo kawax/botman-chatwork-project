@@ -43,7 +43,7 @@ class ChatWorkDriver extends HttpDriver
         $this->event = Collection::make($this->payload->get('webhook_event'));
 
         $this->headers = $request->headers;
-        info($this->headers);
+        info($this->headers->get('X-ChatWorkWebhookSignature'));
     }
 
     /**
@@ -180,9 +180,12 @@ class ChatWorkDriver extends HttpDriver
             $this->headers->get('X-ChatWorkWebhookSignature');
         }
 
+        $hash = hash_hmac('sha256', $this->content, base64_decode($this->config->get('webhook_token')));
+        info($hash);
+
         return hash_equals(
             $known,
-            hash_hmac('sha256', $this->content, base64_decode($this->config->get('webhook_token')))
+            $hash
         );
     }
 }
