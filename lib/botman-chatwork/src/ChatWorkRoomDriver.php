@@ -46,7 +46,7 @@ class ChatWorkRoomDriver extends HttpDriver
 
         $this->payload = new ParameterBag((array)json_decode($request->getContent(), true));
 
-        $this->event = Collection::make($this->payload->get(self::TOKEN_TYPE));
+        $this->event = Collection::make($this->payload->get('webhook_event'));
 
         $this->headers = $request->headers;
     }
