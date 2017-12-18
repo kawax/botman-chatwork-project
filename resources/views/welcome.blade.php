@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>BotMan Studio</title>
+    <title>{{ config('app.name') }}</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" type="text/css">
@@ -60,6 +60,11 @@
 
         <div class="links">
             <a href="/botman/tinker">Tinker</a>
+            <a href="https://chatwork.com/g/botman" target="_blank">ChatWork</a>
+            <a href="https://github.com/kawax/botman-chatwork" target="_blank">GitHub</a>
+        </div>
+
+        <div class="links">
             <a href="https://botman.io/docs" target="_blank">Documentation</a>
             <a href="https://twitter.com/botman_io" target="_blank">News</a>
             <a href="https://rauchg-slackin-jtdkltstsj.now.sh/" target="_blank">Slack</a>
