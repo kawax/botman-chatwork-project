@@ -23,7 +23,7 @@
         "mpociot/slack-client": "^0.3.0",
         "php-http/guzzle6-adapter": "^1.1",
         "rap2hpoutre/laravel-log-viewer": "^0.11",
-        "revolution/botman-chatwork": "0.*"
+        "revolution/botman-chatwork": "^1.0"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
