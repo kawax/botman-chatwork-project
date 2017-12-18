@@ -11,16 +11,18 @@
     "type": "project",
     "require": {
         "php": ">=7.0",
+        "botman/botman": "~2.0",
         "botman/driver-web": "~1.0",
         "botman/studio-addons": "~1.0",
+        "botman/tinker": "~1.0",
         "clue/stdio-react": "^1.0",
+        "fideloper/proxy": "~3.3",
+        "graham-campbell/github": "^6.1",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
-        "botman/botman": "~2.0",
-        "botman/tinker": "~1.0",
         "mpociot/slack-client": "^0.3.0",
-        "rap2hpoutre/laravel-log-viewer": "^0.11",
-        "fideloper/proxy": "~3.3"
+        "php-http/guzzle6-adapter": "^1.1",
+        "rap2hpoutre/laravel-log-viewer": "^0.11"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
