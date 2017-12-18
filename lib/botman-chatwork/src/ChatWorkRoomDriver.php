@@ -106,7 +106,9 @@ class ChatWorkRoomDriver extends HttpDriver
      */
     public function buildServicePayload($message, $matchingMessage, $additionalParameters = [])
     {
-        if ($message instanceof OutgoingMessage) {
+        if ($message instanceof Question) {
+            $payload['body'] = $this->getReply($matchingMessage) . $message->getText();
+        } elseif ($message instanceof OutgoingMessage) {
             $payload['body'] = $this->getReply($matchingMessage) . $message->getText();
         } else {
             $payload['body'] = $this->getReply($matchingMessage) . $message;
