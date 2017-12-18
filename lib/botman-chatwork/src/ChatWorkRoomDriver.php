@@ -58,8 +58,6 @@ class ChatWorkRoomDriver extends HttpDriver
      */
     public function matchesRequest()
     {
-        info($this->payload->get('webhook_event_type') === static::EVENT_TYPE);
-
         return $this->validateSignature() && $this->payload->get('webhook_event_type') === static::EVENT_TYPE;
     }
 
@@ -108,6 +106,8 @@ class ChatWorkRoomDriver extends HttpDriver
      */
     public function buildServicePayload($message, $matchingMessage, $additionalParameters = [])
     {
+        info($message);
+
         if ($message instanceof Question) {
             $payload['body'] = $this->getReply($matchingMessage) . $message->getText();
         } elseif ($message instanceof OutgoingMessage) {
