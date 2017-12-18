@@ -203,6 +203,8 @@ class ChatWorkRoomDriver extends HttpDriver
      */
     protected function validateSignature()
     {
+        info(self::class);
+
         $known = $this->headers->get('X-ChatWorkWebhookSignature', '');
 
         info($known);
