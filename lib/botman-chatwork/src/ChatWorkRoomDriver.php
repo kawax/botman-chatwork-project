@@ -58,6 +58,8 @@ class ChatWorkRoomDriver extends HttpDriver
      */
     public function matchesRequest()
     {
+        info($this->payload->get('webhook_event_type') === static::EVENT_TYPE);
+
         return $this->validateSignature() && $this->payload->get('webhook_event_type') === static::EVENT_TYPE;
     }
 
@@ -97,9 +99,9 @@ class ChatWorkRoomDriver extends HttpDriver
     }
 
     /**
-     * @param string|OutgoingMessage $message
-     * @param IncomingMessage        $matchingMessage
-     * @param array                  $additionalParameters
+     * @param string|OutgoingMessage|Question $message
+     * @param IncomingMessage                 $matchingMessage
+     * @param array                           $additionalParameters
      *s
      *
      * @return array
@@ -133,7 +135,7 @@ class ChatWorkRoomDriver extends HttpDriver
         info($this->event->get('room_id'));
 
         $res = $this->http->post(
-            static::API_ENDPOINT . 'rooms/' . $this->event->get('room_id') . '/messages',
+            self::API_ENDPOINT . 'rooms/' . $this->event->get('room_id') . '/messages',
             [],
             $payload,
             $headers);
@@ -195,7 +197,7 @@ class ChatWorkRoomDriver extends HttpDriver
             'X-ChatWorkToken: ' . $this->config->get('api_token'),
         ];
 
-        return $this->http->post(static::API_ENDPOINT . $endpoint, [], $parameters, $headers);
+        return $this->http->post(self::API_ENDPOINT . $endpoint, [], $parameters, $headers);
     }
 
     /**
