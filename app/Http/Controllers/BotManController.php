@@ -5,9 +5,7 @@ namespace App\Http\Controllers;
 use App\Conversations\ExampleConversation;
 use BotMan\BotMan\BotMan;
 use Illuminate\Http\Request;
-
 use Revolution\BotMan\Drivers\ChatWork\ChatWorkAccountDriver;
-
 
 class BotManController extends Controller
 {
