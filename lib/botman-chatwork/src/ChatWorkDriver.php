@@ -91,20 +91,19 @@ class ChatWorkDriver extends HttpDriver
     }
 
     /**
-     * @param string|\BotMan\BotMan\Messages\Outgoing\Question $message
-     * @param IncomingMessage                                  $matchingMessage
-     * @param array                                            $additionalParameters
+     * @param string|OutgoingMessage $message
+     * @param IncomingMessage        $matchingMessage
+     * @param array                  $additionalParameters
+     *s
      *
      * @return array
      */
     public function buildServicePayload($message, $matchingMessage, $additionalParameters = [])
     {
-        if ($message instanceof Question) {
-            $payload['body'] = $message->getText();
-        } elseif ($message instanceof OutgoingMessage) {
-            $payload['body'] = $message->getText();
+        if ($message instanceof OutgoingMessage) {
+            $payload['body'] = $this->getReply($matchingMessage) . $message->getText();
         } else {
-            $payload['body'] = $message;
+            $payload['body'] = $this->getReply($matchingMessage) . $message;
         }
 
         return $payload;
@@ -142,6 +141,21 @@ class ChatWorkDriver extends HttpDriver
     public function isConfigured()
     {
         return !empty($this->config->get('webhook_token'));
+    }
+
+    /**
+     *
+     * @param \BotMan\BotMan\Messages\Incoming\IncomingMessage $matchingMessage
+     *
+     * @return string
+     */
+    public function getReply(IncomingMessage $matchingMessage)
+    {
+        $payload = $matchingMessage->getPayload();
+
+        $rp = "[rp aid={$payload->get('account_id')} to={$payload->get('room_id')}-{$payload->get('message_id')}]\n";
+
+        return $rp;
     }
 
     /**
