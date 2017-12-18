@@ -205,8 +205,12 @@ class ChatWorkRoomDriver extends HttpDriver
     {
         $known = $this->headers->get('X-ChatWorkWebhookSignature', '');
 
+        info($known);
+
         $hash = hash_hmac('sha256', $this->content, base64_decode($this->config->get(self::TOKEN_TYPE)), true);
         $hash = base64_encode($hash);
+
+        info('hash : ' . $hash);
 
         return hash_equals(
             $known,
