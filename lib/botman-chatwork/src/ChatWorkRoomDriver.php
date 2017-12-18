@@ -58,7 +58,7 @@ class ChatWorkRoomDriver extends HttpDriver
      */
     public function matchesRequest()
     {
-        return $this->validateSignature() && $this->payload->get('webhook_event_type') === self::EVENT_TYPE;
+        return $this->validateSignature() && $this->payload->get('webhook_event_type') === static::EVENT_TYPE;
     }
 
     /**
@@ -80,7 +80,7 @@ class ChatWorkRoomDriver extends HttpDriver
     {
         if (empty($this->messages)) {
             $messageText = $this->event->get('body');
-            $account_id = $this->event->get(self::ACCOUNT_ID);
+            $account_id = $this->event->get(static::ACCOUNT_ID);
             $room_id = $this->event->get('room_id');
             $this->messages = [new IncomingMessage($messageText, $account_id, $room_id, $this->event)];
         }
@@ -133,7 +133,7 @@ class ChatWorkRoomDriver extends HttpDriver
         info($this->event->get('room_id'));
 
         $res = $this->http->post(
-            self::API_ENDPOINT . 'rooms/' . $this->event->get('room_id') . '/messages',
+            static::API_ENDPOINT . 'rooms/' . $this->event->get('room_id') . '/messages',
             [],
             $payload,
             $headers);
@@ -148,7 +148,7 @@ class ChatWorkRoomDriver extends HttpDriver
      */
     public function isConfigured()
     {
-        return !empty($this->config->get(self::TOKEN_TYPE));
+        return !empty($this->config->get(static::TOKEN_TYPE));
     }
 
     /**
@@ -161,7 +161,7 @@ class ChatWorkRoomDriver extends HttpDriver
     {
         $payload = $matchingMessage->getPayload();
 
-        $rp = "[rp aid={$payload->get(self::ACCOUNT_ID)} to={$payload->get('room_id')}-{$payload->get('message_id')}]\n";
+        $rp = "[rp aid={$payload->get(static::ACCOUNT_ID)} to={$payload->get('room_id')}-{$payload->get('message_id')}]\n";
 
         return $rp;
     }
@@ -177,7 +177,7 @@ class ChatWorkRoomDriver extends HttpDriver
     {
         $payload = $matchingMessage->getPayload();
 
-        return new User($payload->get(self::ACCOUNT_ID));
+        return new User($payload->get(static::ACCOUNT_ID));
     }
 
     /**
@@ -195,7 +195,7 @@ class ChatWorkRoomDriver extends HttpDriver
             'X-ChatWorkToken: ' . $this->config->get('api_token'),
         ];
 
-        return $this->http->post(self::API_ENDPOINT . $endpoint, [], $parameters, $headers);
+        return $this->http->post(static::API_ENDPOINT . $endpoint, [], $parameters, $headers);
     }
 
     /**
@@ -203,13 +203,13 @@ class ChatWorkRoomDriver extends HttpDriver
      */
     protected function validateSignature()
     {
-        info(self::class);
+        info(static::class);
 
         $known = $this->headers->get('X-ChatWorkWebhookSignature', '');
 
         info($known);
 
-        $hash = hash_hmac('sha256', $this->content, base64_decode($this->config->get(self::TOKEN_TYPE)), true);
+        $hash = hash_hmac('sha256', $this->content, base64_decode($this->config->get(static::TOKEN_TYPE)), true);
         $hash = base64_encode($hash);
 
         info('hash : ' . $hash);
