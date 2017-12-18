@@ -252,16 +252,16 @@
         },
         {
             "name": "clue/stdio-react",
-            "version": "v1.1.0",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/clue/php-stdio-react.git",
-                "reference": "f574375d23832c7a86019257238c62dfffa4b962"
+                "reference": "f751e05a025ddf7bbad53f9dd54333bf3921bd2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clue/php-stdio-react/zipball/f574375d23832c7a86019257238c62dfffa4b962",
-                "reference": "f574375d23832c7a86019257238c62dfffa4b962",
+                "url": "https://api.github.com/repos/clue/php-stdio-react/zipball/f751e05a025ddf7bbad53f9dd54333bf3921bd2a",
+                "reference": "f751e05a025ddf7bbad53f9dd54333bf3921bd2a",
                 "shasum": ""
             },
             "require": {
@@ -274,7 +274,7 @@
             "require-dev": {
                 "clue/arguments": "^2.0",
                 "clue/commander": "^1.2",
-                "phpunit/phpunit": "^5.0 || ^4.8"
+                "phpunit/phpunit": "^6.4 || ^5.7 || ^4.8.35"
             },
             "suggest": {
                 "ext-mbstring": "Using ext-mbstring should provide slightly better performance for handling I/O"
@@ -308,7 +308,7 @@
                 "stdio",
                 "stdout"
             ],
-            "time": "2017-11-01T16:41:13+00:00"
+            "time": "2017-12-18T10:07:12+00:00"
         },
         {
             "name": "clue/stream-filter",
@@ -3340,16 +3340,16 @@
         },
         {
             "name": "revolution/botman-chatwork",
-            "version": "0.0.4",
+            "version": "0.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kawax/botman-chatwork.git",
-                "reference": "263caea3d4c8a1c6ebbef39024fc3758bae43bd2"
+                "reference": "587b53afd099f02f3dc9bf592cf648c700fd702d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawax/botman-chatwork/zipball/263caea3d4c8a1c6ebbef39024fc3758bae43bd2",
-                "reference": "263caea3d4c8a1c6ebbef39024fc3758bae43bd2",
+                "url": "https://api.github.com/repos/kawax/botman-chatwork/zipball/587b53afd099f02f3dc9bf592cf648c700fd702d",
+                "reference": "587b53afd099f02f3dc9bf592cf648c700fd702d",
                 "shasum": ""
             },
             "require": {
@@ -3391,7 +3391,7 @@
                 "chatwork",
                 "laravel"
             ],
-            "time": "2017-12-18T09:11:42+00:00"
+            "time": "2017-12-18T11:03:43+00:00"
         },
         {
             "name": "spatie/laravel-menu",

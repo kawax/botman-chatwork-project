@@ -4,15 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Conversations\ExampleConversation;
 use BotMan\BotMan\BotMan;
+use Illuminate\Http\Request;
+
+use Revolution\BotMan\Drivers\ChatWork\ChatWorkAccountDriver;
+
 
 class BotManController extends Controller
 {
     /**
      * Place your BotMan logic here.
      */
-    public function handle()
+    public function handle(Request $request)
     {
         $botman = app('botman');
+
+        if ($request->has('room')) {
+            $botman->say('test', $request->input('room'), ChatWorkAccountDriver::class);
+        }
 
         $botman->listen();
     }
