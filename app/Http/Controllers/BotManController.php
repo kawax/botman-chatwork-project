@@ -19,7 +19,7 @@ class BotManController extends Controller
         $botman = app('botman');
 
         if ($request->has('room')) {
-            $botman->say('test', $request->input('room'), ChatWorkAccountDriver::class);
+            $botman->say('say() test', $request->input('room'), ChatWorkAccountDriver::class);
         }
 
         $botman->listen();
