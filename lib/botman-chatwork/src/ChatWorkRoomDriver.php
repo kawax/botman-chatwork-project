@@ -78,6 +78,8 @@ class ChatWorkRoomDriver extends HttpDriver
      */
     public function getMessages()
     {
+        info(static::ACCOUNT_ID);
+
         if (empty($this->messages)) {
             $messageText = $this->event->get('body');
             $account_id = $this->event->get(static::ACCOUNT_ID);
