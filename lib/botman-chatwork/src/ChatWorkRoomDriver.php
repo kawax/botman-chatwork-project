@@ -2,18 +2,17 @@
 
 namespace Revolution\BotMan\Drivers\ChatWork;
 
-use BotMan\BotMan\Users\User;
-use Illuminate\Support\Collection;
 use BotMan\BotMan\Drivers\HttpDriver;
 use BotMan\BotMan\Messages\Incoming\Answer;
-use BotMan\BotMan\Messages\Outgoing\Question;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\ParameterBag;
-use Symfony\Component\HttpFoundation\HeaderBag;
 use BotMan\BotMan\Messages\Incoming\IncomingMessage;
 use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
-use BotMan\BotMan\Messages\Conversations\Conversation;
+use BotMan\BotMan\Messages\Outgoing\Question;
+use BotMan\BotMan\Users\User;
+use Illuminate\Support\Collection;
+use Symfony\Component\HttpFoundation\HeaderBag;
+use Symfony\Component\HttpFoundation\ParameterBag;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class ChatWorkRoomDriver extends HttpDriver
 {
@@ -41,7 +40,7 @@ class ChatWorkRoomDriver extends HttpDriver
     {
         $this->config = Collection::make($this->config->get('chatwork', []));
 
-        $this->payload = new ParameterBag((array)json_decode($request->getContent(), true));
+        $this->payload = new ParameterBag((array) json_decode($request->getContent(), true));
 
         $this->event = Collection::make($this->payload->get('webhook_event'));
 
@@ -59,7 +58,7 @@ class ChatWorkRoomDriver extends HttpDriver
     }
 
     /**
-     * @param  \BotMan\BotMan\Messages\Incoming\IncomingMessage $message
+     * @param \BotMan\BotMan\Messages\Incoming\IncomingMessage $message
      *
      * @return \BotMan\BotMan\Messages\Incoming\Answer
      */
@@ -105,11 +104,11 @@ class ChatWorkRoomDriver extends HttpDriver
     public function buildServicePayload($message, $matchingMessage, $additionalParameters = [])
     {
         if ($message instanceof Question) {
-            $payload['body'] = $this->getReply($matchingMessage) . $message->getText();
+            $payload['body'] = $this->getReply($matchingMessage).$message->getText();
         } elseif ($message instanceof OutgoingMessage) {
-            $payload['body'] = $this->getReply($matchingMessage) . $message->getText();
+            $payload['body'] = $this->getReply($matchingMessage).$message->getText();
         } else {
-            $payload['body'] = $this->getReply($matchingMessage) . $message;
+            $payload['body'] = $this->getReply($matchingMessage).$message;
         }
 
         return $payload;
@@ -123,11 +122,11 @@ class ChatWorkRoomDriver extends HttpDriver
     public function sendPayload($payload)
     {
         $headers = [
-            'X-ChatWorkToken: ' . $this->config->get('api_token'),
+            'X-ChatWorkToken: '.$this->config->get('api_token'),
         ];
 
         $res = $this->http->post(
-            self::API_ENDPOINT . 'rooms/' . $this->event->get('room_id') . '/messages',
+            self::API_ENDPOINT.'rooms/'.$this->event->get('room_id').'/messages',
             [],
             $payload,
             $headers);
@@ -144,7 +143,6 @@ class ChatWorkRoomDriver extends HttpDriver
     }
 
     /**
-     *
      * @param \BotMan\BotMan\Messages\Incoming\IncomingMessage $matchingMessage
      *
      * @return string
@@ -184,10 +182,10 @@ class ChatWorkRoomDriver extends HttpDriver
     public function sendRequest($endpoint, array $parameters, IncomingMessage $matchingMessage)
     {
         $headers = [
-            'X-ChatWorkToken: ' . $this->config->get('api_token'),
+            'X-ChatWorkToken: '.$this->config->get('api_token'),
         ];
 
-        return $this->http->post(self::API_ENDPOINT . $endpoint, [], $parameters, $headers);
+        return $this->http->post(self::API_ENDPOINT.$endpoint, [], $parameters, $headers);
     }
 
     /**
