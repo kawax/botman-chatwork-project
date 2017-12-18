@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5086c0167c0800e75e97d9e2b950b8ca",
+    "content-hash": "7f8d5634863f6ac5cfc71eebfe79a23a",
     "packages": [
         {
             "name": "botman/botman",
@@ -3337,6 +3337,61 @@
                 "stream"
             ],
             "time": "2017-01-25T14:44:14+00:00"
+        },
+        {
+            "name": "revolution/botman-chatwork",
+            "version": "0.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kawax/botman-chatwork.git",
+                "reference": "263caea3d4c8a1c6ebbef39024fc3758bae43bd2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kawax/botman-chatwork/zipball/263caea3d4c8a1c6ebbef39024fc3758bae43bd2",
+                "reference": "263caea3d4c8a1c6ebbef39024fc3758bae43bd2",
+                "shasum": ""
+            },
+            "require": {
+                "botman/botman": "~2.0",
+                "guzzlehttp/guzzle": "^6.2",
+                "illuminate/support": "5.*",
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "phpunit/phpunit": "6.*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Revolution\\BotMan\\Drivers\\ChatWork\\Providers\\ChatWorkDriverServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Revolution\\BotMan\\Drivers\\ChatWork\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "kawax",
+                    "email": "kawaxbiz@gmail.com"
+                }
+            ],
+            "description": "BotMan driver for ChatWork",
+            "keywords": [
+                "Botman",
+                "chatwork",
+                "laravel"
+            ],
+            "time": "2017-12-18T09:11:42+00:00"
         },
         {
             "name": "spatie/laravel-menu",
