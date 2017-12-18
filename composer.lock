@@ -84,16 +84,16 @@
         },
         {
             "name": "botman/driver-web",
-            "version": "1.1.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/botman/driver-web.git",
-                "reference": "9ee9724f71e2e10b306cbed29b3f42e7873a9420"
+                "reference": "78f7b186e3928285f0311ba8cf5474c7100566dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/botman/driver-web/zipball/9ee9724f71e2e10b306cbed29b3f42e7873a9420",
-                "reference": "9ee9724f71e2e10b306cbed29b3f42e7873a9420",
+                "url": "https://api.github.com/repos/botman/driver-web/zipball/78f7b186e3928285f0311ba8cf5474c7100566dc",
+                "reference": "78f7b186e3928285f0311ba8cf5474c7100566dc",
                 "shasum": ""
             },
             "require": {
@@ -129,7 +129,7 @@
                 "bot",
                 "web"
             ],
-            "time": "2017-12-08T15:35:15+00:00"
+            "time": "2017-12-18T11:37:12+00:00"
         },
         {
             "name": "botman/studio-addons",
