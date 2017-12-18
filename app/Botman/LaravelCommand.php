@@ -13,6 +13,8 @@ class LaravelCommand
 
         info($release);
 
-        $bot->reply($release['name']);
+        $reply = $release['name'] . PHP_EOL . $release['html_url'] . PHP_EOL . '[info]' . $release['body'] . '[/info]';
+
+        $bot->reply($reply);
     }
 }
