@@ -17,7 +17,7 @@ class DriverServiceProvider extends ServiceProvider
      * @var array
      */
     protected $drivers = [
-        ChatWorkRoomDriver::class,
+        //        ChatWorkRoomDriver::class,
         ChatWorkAccountDriver::class,
     ];
 

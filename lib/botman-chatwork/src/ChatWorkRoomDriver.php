@@ -6,12 +6,9 @@ use BotMan\BotMan\Users\User;
 use Illuminate\Support\Collection;
 use BotMan\BotMan\Drivers\HttpDriver;
 use BotMan\BotMan\Messages\Incoming\Answer;
-use BotMan\BotMan\Interfaces\VerifiesService;
-use BotMan\BotMan\Messages\Attachments\Image;
 use BotMan\BotMan\Messages\Outgoing\Question;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\HeaderBag;
 use BotMan\BotMan\Messages\Incoming\IncomingMessage;
@@ -78,16 +75,11 @@ class ChatWorkRoomDriver extends HttpDriver
      */
     public function getMessages()
     {
-
         if (empty($this->messages)) {
-            info(static::ACCOUNT_ID);
-
             $messageText = $this->event->get('body');
             $account_id = $this->event->get(static::ACCOUNT_ID);
             $room_id = $this->event->get('room_id');
-            info($messageText);
-            info($account_id);
-            info($room_id);
+
             $this->messages = [new IncomingMessage($messageText, $account_id, $room_id, $this->event)];
         }
 
@@ -112,12 +104,9 @@ class ChatWorkRoomDriver extends HttpDriver
      */
     public function buildServicePayload($message, $matchingMessage, $additionalParameters = [])
     {
-        //        info($message);
-        //
-        //        if ($message instanceof Question) {
-        //            $payload['body'] = $this->getReply($matchingMessage) . $message->getText();
-        //        } else
-        if ($message instanceof OutgoingMessage) {
+        if ($message instanceof Question) {
+            $payload['body'] = $this->getReply($matchingMessage) . $message->getText();
+        } elseif ($message instanceof OutgoingMessage) {
             $payload['body'] = $this->getReply($matchingMessage) . $message->getText();
         } else {
             $payload['body'] = $this->getReply($matchingMessage) . $message;
@@ -137,17 +126,11 @@ class ChatWorkRoomDriver extends HttpDriver
             'X-ChatWorkToken: ' . $this->config->get('api_token'),
         ];
 
-        info($payload);
-
-        info($this->event->get('room_id'));
-
         $res = $this->http->post(
             self::API_ENDPOINT . 'rooms/' . $this->event->get('room_id') . '/messages',
             [],
             $payload,
             $headers);
-
-        info($res);
 
         return $res;
     }
@@ -157,7 +140,7 @@ class ChatWorkRoomDriver extends HttpDriver
      */
     public function isConfigured()
     {
-        return !empty($this->config->get(static::TOKEN_TYPE));
+        return !empty($this->config->get('api_token'));
     }
 
     /**
@@ -212,16 +195,10 @@ class ChatWorkRoomDriver extends HttpDriver
      */
     protected function validateSignature()
     {
-        info(static::class);
-
         $known = $this->headers->get('X-ChatWorkWebhookSignature', '');
-
-        info($known);
 
         $hash = hash_hmac('sha256', $this->content, base64_decode($this->config->get(static::TOKEN_TYPE)), true);
         $hash = base64_encode($hash);
-
-        info('hash : ' . $hash);
 
         return hash_equals(
             $known,

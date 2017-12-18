@@ -11,10 +11,8 @@ class BotManController extends Controller
     /**
      * Place your BotMan logic here.
      */
-    public function handle(Request $request)
+    public function handle()
     {
-        info($request->getContent());
-
         $botman = app('botman');
 
         $botman->listen();
