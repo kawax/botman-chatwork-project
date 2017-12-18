@@ -18,11 +18,17 @@ use BotMan\BotMan\Messages\Incoming\IncomingMessage;
 use BotMan\BotMan\Messages\Outgoing\OutgoingMessage;
 use BotMan\BotMan\Messages\Conversations\Conversation;
 
-class ChatWorkDriver extends HttpDriver
+class ChatWorkRoomDriver extends HttpDriver
 {
-    const DRIVER_NAME = 'ChatWork';
+    const DRIVER_NAME = 'ChatWorkRoom';
 
     const API_ENDPOINT = 'https://api.chatwork.com/v2/';
+
+    const EVENT_TYPE = 'message_created';
+
+    const TOKEN_TYPE = 'webhook_room_token';
+
+    const ACCOUNT_ID = 'account_id';
 
     protected $messages = [];
 
@@ -40,7 +46,7 @@ class ChatWorkDriver extends HttpDriver
 
         $this->payload = new ParameterBag((array)json_decode($request->getContent(), true));
 
-        $this->event = Collection::make($this->payload->get('webhook_event'));
+        $this->event = Collection::make($this->payload->get(self::TOKEN_TYPE));
 
         $this->headers = $request->headers;
     }
@@ -52,7 +58,7 @@ class ChatWorkDriver extends HttpDriver
      */
     public function matchesRequest()
     {
-        return $this->validateSignature() && $this->payload->get('webhook_event_type') === 'message_created';
+        return $this->validateSignature() && $this->payload->get('webhook_event_type') === self::EVENT_TYPE;
     }
 
     /**
@@ -74,7 +80,7 @@ class ChatWorkDriver extends HttpDriver
     {
         if (empty($this->messages)) {
             $messageText = $this->event->get('body');
-            $account_id = $this->event->get('account_id');
+            $account_id = $this->event->get(self::ACCOUNT_ID);
             $room_id = $this->event->get('room_id');
             $this->messages = [new IncomingMessage($messageText, $account_id, $room_id, $this->event)];
         }
@@ -140,7 +146,7 @@ class ChatWorkDriver extends HttpDriver
      */
     public function isConfigured()
     {
-        return !empty($this->config->get('webhook_token'));
+        return !empty($this->config->get(self::TOKEN_TYPE));
     }
 
     /**
@@ -153,7 +159,7 @@ class ChatWorkDriver extends HttpDriver
     {
         $payload = $matchingMessage->getPayload();
 
-        $rp = "[rp aid={$payload->get('account_id')} to={$payload->get('room_id')}-{$payload->get('message_id')}]\n";
+        $rp = "[rp aid={$payload->get(self::ACCOUNT_ID)} to={$payload->get('room_id')}-{$payload->get('message_id')}]\n";
 
         return $rp;
     }
@@ -169,7 +175,7 @@ class ChatWorkDriver extends HttpDriver
     {
         $payload = $matchingMessage->getPayload();
 
-        return new User($payload->get('account_id'));
+        return new User($payload->get(self::ACCOUNT_ID));
     }
 
     /**
@@ -197,7 +203,7 @@ class ChatWorkDriver extends HttpDriver
     {
         $known = $this->headers->get('X-ChatWorkWebhookSignature', '');
 
-        $hash = hash_hmac('sha256', $this->content, base64_decode($this->config->get('webhook_token')), true);
+        $hash = hash_hmac('sha256', $this->content, base64_decode($this->config->get(self::TOKEN_TYPE)), true);
         $hash = base64_encode($hash);
 
         return hash_equals(

@@ -5,7 +5,8 @@ namespace App\Providers\BotMan;
 use BotMan\BotMan\Drivers\DriverManager;
 use BotMan\Studio\Providers\DriverServiceProvider as ServiceProvider;
 
-use Revolution\BotMan\Drivers\ChatWork\ChatWorkDriver;
+use Revolution\BotMan\Drivers\ChatWork\ChatWorkRoomDriver;
+use Revolution\BotMan\Drivers\ChatWork\ChatWorkAccountDriver;
 
 class DriverServiceProvider extends ServiceProvider
 {
@@ -16,7 +17,8 @@ class DriverServiceProvider extends ServiceProvider
      * @var array
      */
     protected $drivers = [
-        ChatWorkDriver::class,
+        ChatWorkRoomDriver::class,
+        ChatWorkAccountDriver::class,
     ];
 
     /**
