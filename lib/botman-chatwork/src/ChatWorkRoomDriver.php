@@ -78,12 +78,16 @@ class ChatWorkRoomDriver extends HttpDriver
      */
     public function getMessages()
     {
-        info(static::ACCOUNT_ID);
 
         if (empty($this->messages)) {
+            info(static::ACCOUNT_ID);
+
             $messageText = $this->event->get('body');
             $account_id = $this->event->get(static::ACCOUNT_ID);
             $room_id = $this->event->get('room_id');
+            info($messageText);
+            info($account_id);
+            info($room_id);
             $this->messages = [new IncomingMessage($messageText, $account_id, $room_id, $this->event)];
         }
 
