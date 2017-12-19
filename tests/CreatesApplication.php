@@ -26,7 +26,7 @@ trait CreatesApplication
         $app->make(Kernel::class)->bootstrap();
 
         $this->botman = $app->make('botman');
-        $this->bot = new BotManTester($this->botman, $fakeDriver, $this);
+        $this->bot = new BotManTester($this->botman, $fakeDriver);
 
         return $app;
     }

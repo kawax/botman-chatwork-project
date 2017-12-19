@@ -476,6 +476,7 @@
     </div>
 
     <div class="links">
+      <a href="/login">Login</a>
       <a href="/botman/tinker">Tinker</a>
       <a href="https://chatwork.com/g/botman" target="_blank">ChatWork</a>
       <a href="https://github.com/kawax/botman-chatwork" target="_blank">GitHub</a>

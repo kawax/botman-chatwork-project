@@ -16,4 +16,11 @@ Route::view('/', 'welcome');
 Route::match(['get', 'post'], '/botman', 'BotManController@handle');
 Route::get('/botman/tinker', 'BotManController@tinker');
 
+
+
+Route::get('login', 'LoginController@redirect');
+Route::get('callback', 'LoginController@callback');
+Route::get('logout', 'LoginController@logout');
+
+
 //Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');

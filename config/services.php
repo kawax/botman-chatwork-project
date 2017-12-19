@@ -30,9 +30,15 @@ return [
     ],
 
     'stripe' => [
-        'model'  => App\User::class,
+        'model'  => App\Model\User::class,
         'key'    => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
+    ],
+
+    'chatwork' => [
+        'client_id'     => env('CHATWORK_CLIENT_ID'),
+        'client_secret' => env('CHATWORK_CLIENT_SECRET'),
+        'redirect'      => env('CHATWORK_REDIRECT'),
     ],
 
 ];
