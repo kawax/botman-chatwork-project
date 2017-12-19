@@ -9,6 +9,13 @@ use Revolution\BotMan\Drivers\ChatWork\ChatWorkAccountDriver;
 
 use App\Model\Integration;
 
+/**
+ * SlackのOutgoing WebHooksを使ってSlackからChatWorkにそのまま流す。
+ * Integrationで各ユーザーごとに設定できるようにはしてるけど設定機能はまだない。DBで直接変更。
+ *
+ * Class SlackController
+ * @package App\Http\Controllers
+ */
 class SlackController extends Controller
 {
     /**
