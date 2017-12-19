@@ -36,7 +36,12 @@ class SlackController extends Controller
         $botman = app('botman');
 
         try {
-            $botman->say($text, $room_id, ChatWorkAccountDriver::class, ['api_token' => $api_token]);
+            $botman->say(
+                $text,
+                $room_id,
+                ChatWorkAccountDriver::class,
+                ['api_token' => $api_token]
+            );
         } catch (BotManException $e) {
             logger()->error($e->getMessage());
         }
