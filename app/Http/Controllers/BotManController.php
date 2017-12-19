@@ -16,7 +16,7 @@ class BotManController extends Controller
     {
         $botman = app('botman');
 
-        /**
+        /*
          * say()は受信者とドライバーを指定するのでどんなリクエストにも反応できる。
          * ChatWork内に限らず別のサービスからのwebhookでChatWorkに投稿することもできる。
          * 単純にChatWorkへの通知に対応してないサービスのブリッジにするとか…。
