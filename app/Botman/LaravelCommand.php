@@ -13,7 +13,7 @@ class LaravelCommand
 
         info($release);
 
-        $reply = $release['name'].PHP_EOL.$release['html_url'].PHP_EOL.'[info]'.$release['body'].'[/info]';
+        $reply = $release['name'] . PHP_EOL . $release['html_url'] . PHP_EOL . '[info]' . $release['body'] . '[/info]';
 
         $bot->reply($reply);
     }
