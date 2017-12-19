@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Conversations\ExampleConversation;
 use BotMan\BotMan\BotMan;
+use BotMan\BotMan\Exceptions\Base\BotManException;
 use Illuminate\Http\Request;
 use Revolution\BotMan\Drivers\ChatWork\ChatWorkAccountDriver;
 
@@ -24,7 +25,11 @@ class BotManController extends Controller
          * ChatWorkの場合は受信者にルームIDを指定。
          */
         if ($request->has('room')) {
-            $botman->say('say() test', $request->input('room'), ChatWorkAccountDriver::class);
+            try {
+                $botman->say('say() test', $request->input('room'), ChatWorkAccountDriver::class);
+            } catch (BotManException $e) {
+                logger()->error($e->getMessage());
+            }
         }
 
         $botman->listen();

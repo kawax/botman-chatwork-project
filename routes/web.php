@@ -17,6 +17,8 @@ Route::match(['get', 'post'], '/botman', 'BotManController@handle');
 Route::get('/botman/tinker', 'BotManController@tinker');
 
 
+Route::post('slack/{uuid}', 'SlackController');
+
 
 Route::get('login', 'LoginController@redirect');
 Route::get('callback', 'LoginController@callback');
