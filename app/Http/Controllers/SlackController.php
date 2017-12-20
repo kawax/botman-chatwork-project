@@ -11,7 +11,6 @@ use App\Model\Integration;
 
 /**
  * SlackのOutgoing WebHooksを使ってSlackからChatWorkにそのまま流す。
- * Integrationで各ユーザーごとに設定できるようにはしてるけど設定機能はまだない。DBで直接変更。
  *
  * Class SlackController
  * @package App\Http\Controllers
@@ -31,6 +30,7 @@ class SlackController extends Controller
         $room_id = $integration->recipient;
         $api_token = $integration->api_token;
 
+        //そのまま流してるだけなので見にくいような時はここで変更
         $text = $request->input('text');
 
         $botman = app('botman');

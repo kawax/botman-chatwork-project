@@ -39,7 +39,7 @@ class LoginController extends Controller
 
         auth()->login($loginUser, true);
 
-        return redirect('/');
+        return redirect()->route('integration.index');
     }
 
     public function logout()

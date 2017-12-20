@@ -10,8 +10,14 @@ window._ = require('lodash');
 try {
     window.$ = window.jQuery = require('jquery');
 
-    require('bootstrap-sass');
+    // require('bootstrap-sass');
 } catch (e) {}
+
+import UIkit from 'uikit';
+import Icons from 'uikit/dist/js/uikit-icons';
+
+// loads the Icon plugin
+UIkit.use(Icons);
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests

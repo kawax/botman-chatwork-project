@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a8418913add19d6aff6140abf4318d6",
+    "content-hash": "217a67260e9a87bb828600fd49d6ded1",
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
@@ -1877,6 +1877,57 @@
                 "github"
             ],
             "time": "2017-09-30T20:00:06+00:00"
+        },
+        {
+            "name": "laravel-frontend-presets/uikit3",
+            "version": "0.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-frontend-presets/uikit3.git",
+                "reference": "dd182e9dfba43d2f99c27f537435922910e89b12"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-frontend-presets/uikit3/zipball/dd182e9dfba43d2f99c27f537435922910e89b12",
+                "reference": "dd182e9dfba43d2f99c27f537435922910e89b12",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaravelFrontendPresets\\UIKit3Preset\\UIKit3PresetServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaravelFrontendPresets\\UIKit3Preset\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Owen Melbourne",
+                    "email": "owenmelbz@gmail.com"
+                }
+            ],
+            "description": "Laravel 5.5.X Front-end preset for UIKit 3.",
+            "keywords": [
+                "laravel",
+                "preset",
+                "uikit3"
+            ],
+            "time": "2017-09-24T14:28:29+00:00"
         },
         {
             "name": "laravel/framework",

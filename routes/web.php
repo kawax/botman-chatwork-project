@@ -16,13 +16,14 @@ Route::view('/', 'welcome');
 Route::match(['get', 'post'], '/botman', 'BotManController@handle');
 Route::get('/botman/tinker', 'BotManController@tinker');
 
+Route::resource('integration', 'IntegrationController')->middleware('auth');
 
-Route::post('slack/{uuid}', 'SlackController');
+Route::name('slack')->post('slack/{uuid}', 'SlackController');
 
 
-Route::get('login', 'LoginController@redirect');
-Route::get('callback', 'LoginController@callback');
-Route::get('logout', 'LoginController@logout');
+Route::name('login')->get('login', 'LoginController@redirect');
+Route::name('callback')->get('callback', 'LoginController@callback');
+Route::name('logout')->post('logout', 'LoginController@logout');
 
 
 //Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
