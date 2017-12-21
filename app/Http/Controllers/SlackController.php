@@ -33,6 +33,9 @@ class SlackController extends Controller
         //そのまま流してるだけなので見にくいような時はここで変更
         $text = $request->input('text');
 
+        // ':*'が絵文字になるので変更
+        $text = str_replace(':*', ': *', $text);
+
         $botman = app('botman');
 
         try {
