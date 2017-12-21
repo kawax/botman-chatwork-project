@@ -38,7 +38,7 @@ class SlackController extends Controller
 
 
         //メッセージ記法
-        $text = '[info][title]' . $request->input('user_name') . ' (Slack)[/title]' . $text . '[/info]';
+        $text = '[info][title]' . $request->input('user_name') . '[/title]' . $text . '[/info]';
 
         $botman = app('botman');
 
