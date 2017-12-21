@@ -4128,16 +4128,16 @@
         },
         {
             "name": "revolution/botman-chatwork",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kawax/botman-chatwork.git",
-                "reference": "c5e8b6b1818034dc142fefa8723c67e5192742a7"
+                "reference": "b812f605f82a8b429580449f08f064be6d97fcf9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kawax/botman-chatwork/zipball/c5e8b6b1818034dc142fefa8723c67e5192742a7",
-                "reference": "c5e8b6b1818034dc142fefa8723c67e5192742a7",
+                "url": "https://api.github.com/repos/kawax/botman-chatwork/zipball/b812f605f82a8b429580449f08f064be6d97fcf9",
+                "reference": "b812f605f82a8b429580449f08f064be6d97fcf9",
                 "shasum": ""
             },
             "require": {
@@ -4179,7 +4179,7 @@
                 "chatwork",
                 "laravel"
             ],
-            "time": "2017-12-19T14:55:46+00:00"
+            "time": "2017-12-21T07:17:01+00:00"
         },
         {
             "name": "revolution/socialite-chatwork",
