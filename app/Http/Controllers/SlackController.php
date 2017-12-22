@@ -34,6 +34,10 @@ class SlackController extends Controller
         $text = $request->input('text');
         info($text);
 
+        if(empty($text)){
+            return;
+        }
+
         // ':*'が絵文字になるので変更
         $text = str_replace(':*', ': *', $text);
 
