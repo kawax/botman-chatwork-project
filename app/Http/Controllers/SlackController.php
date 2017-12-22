@@ -34,7 +34,7 @@ class SlackController extends Controller
         $text = $request->input('text');
         info($text);
 
-        if(empty($text)){
+        if (empty($text)) {
             return;
         }
 
