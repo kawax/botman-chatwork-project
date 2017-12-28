@@ -1410,32 +1410,32 @@
         },
         {
             "name": "graham-campbell/github",
-            "version": "v6.1.0",
+            "version": "v6.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-GitHub.git",
-                "reference": "3788cbe5a3d0a05285a16616b2b7221be091e025"
+                "reference": "c8547e4eb202f0843a680f14c6255247af52af3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-GitHub/zipball/3788cbe5a3d0a05285a16616b2b7221be091e025",
-                "reference": "3788cbe5a3d0a05285a16616b2b7221be091e025",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-GitHub/zipball/c8547e4eb202f0843a680f14c6255247af52af3e",
+                "reference": "c8547e4eb202f0843a680f14c6255247af52af3e",
                 "shasum": ""
             },
             "require": {
                 "graham-campbell/manager": "^3.0",
                 "illuminate/contracts": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*",
                 "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*",
-                "knplabs/github-api": "2.5.*|2.6.*",
+                "knplabs/github-api": "2.5.*|2.6.*|2.7.*",
                 "php": "^7.0"
             },
             "require-dev": {
-                "graham-campbell/analyzer": "^1.1",
+                "graham-campbell/analyzer": "^2.0",
                 "graham-campbell/testbench": "^4.0",
                 "madewithlove/illuminate-psr-cache-bridge": "^1.0",
                 "mockery/mockery": "^1.0",
                 "php-http/guzzle6-adapter": "^1.0",
-                "phpunit/phpunit": "^6.1"
+                "phpunit/phpunit": "^6.5"
             },
             "suggest": {
                 "madewithlove/illuminate-psr-cache-bridge": "Allows caching GitHub HTTP requests"
@@ -1443,7 +1443,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "6.1-dev"
+                    "dev-master": "6.2-dev"
                 },
                 "laravel": {
                     "providers": [
@@ -1480,7 +1480,7 @@
                 "laravel",
                 "php-github-api"
             ],
-            "time": "2017-10-07T10:49:17+00:00"
+            "time": "2017-12-28T00:18:10+00:00"
         },
         {
             "name": "graham-campbell/manager",
@@ -1812,20 +1812,20 @@
         },
         {
             "name": "knplabs/github-api",
-            "version": "2.6.0",
+            "version": "2.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KnpLabs/php-github-api.git",
-                "reference": "cacf6f38bf9e6c5242e2b6dc26a67c4791bc7751"
+                "reference": "d445f1eec4788763315c3c96a214db4e149f9deb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KnpLabs/php-github-api/zipball/cacf6f38bf9e6c5242e2b6dc26a67c4791bc7751",
-                "reference": "cacf6f38bf9e6c5242e2b6dc26a67c4791bc7751",
+                "url": "https://api.github.com/repos/KnpLabs/php-github-api/zipball/d445f1eec4788763315c3c96a214db4e149f9deb",
+                "reference": "d445f1eec4788763315c3c96a214db4e149f9deb",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.5 || ^7.0",
+                "php": "^5.6 || ^7.0",
                 "php-http/cache-plugin": "^1.4",
                 "php-http/client-common": "^1.3",
                 "php-http/client-implementation": "^1.0",
@@ -1839,7 +1839,7 @@
                 "guzzlehttp/psr7": "^1.2",
                 "php-http/guzzle6-adapter": "^1.0",
                 "php-http/mock-client": "^1.0",
-                "phpunit/phpunit": "^4.0 || ^5.5",
+                "phpunit/phpunit": "^5.5 || ^6.0",
                 "sllh/php-cs-fixer-styleci-bridge": "^1.3"
             },
             "type": "library",
@@ -1876,7 +1876,7 @@
                 "gist",
                 "github"
             ],
-            "time": "2017-09-30T20:00:06+00:00"
+            "time": "2017-12-12T20:14:04+00:00"
         },
         {
             "name": "laravel-frontend-presets/uikit3",
@@ -1931,16 +1931,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.5.27",
+            "version": "v5.5.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "b4fb6eeb227b7327b4ca7f92263b693ec9ac9875"
+                "reference": "cfafae1f2043208390a7c984e3070696f4969605"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/b4fb6eeb227b7327b4ca7f92263b693ec9ac9875",
-                "reference": "b4fb6eeb227b7327b4ca7f92263b693ec9ac9875",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/cfafae1f2043208390a7c984e3070696f4969605",
+                "reference": "cfafae1f2043208390a7c984e3070696f4969605",
                 "shasum": ""
             },
             "require": {
@@ -2061,7 +2061,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-12-20T15:43:48+00:00"
+            "time": "2017-12-26T16:24:40+00:00"
         },
         {
             "name": "laravel/socialite",
@@ -2704,16 +2704,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v3.1.2",
+            "version": "v3.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "08131e7ff29de6bb9f12275c7d35df71f25f4d89"
+                "reference": "579f4ce846734a1cf55d6a531d00ca07a43e3cda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/08131e7ff29de6bb9f12275c7d35df71f25f4d89",
-                "reference": "08131e7ff29de6bb9f12275c7d35df71f25f4d89",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/579f4ce846734a1cf55d6a531d00ca07a43e3cda",
+                "reference": "579f4ce846734a1cf55d6a531d00ca07a43e3cda",
                 "shasum": ""
             },
             "require": {
@@ -2751,7 +2751,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2017-11-04T11:48:34+00:00"
+            "time": "2017-12-26T14:43:21+00:00"
         },
         {
             "name": "opis/closure",
@@ -3947,16 +3947,16 @@
         },
         {
             "name": "react/promise-timer",
-            "version": "v1.2.0",
+            "version": "v1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/promise-timer.git",
-                "reference": "3bc527fbd1201a193ab41c19b9a770d71a3514af"
+                "reference": "9b4cd9cbe7457e0d87fe8aa7ccceab8a2c830fbd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/promise-timer/zipball/3bc527fbd1201a193ab41c19b9a770d71a3514af",
-                "reference": "3bc527fbd1201a193ab41c19b9a770d71a3514af",
+                "url": "https://api.github.com/repos/reactphp/promise-timer/zipball/9b4cd9cbe7457e0d87fe8aa7ccceab8a2c830fbd",
+                "reference": "9b4cd9cbe7457e0d87fe8aa7ccceab8a2c830fbd",
                 "shasum": ""
             },
             "require": {
@@ -3965,7 +3965,7 @@
                 "react/promise": "~2.1|~1.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "^5.0 || ^4.8"
+                "phpunit/phpunit": "^6.4 || ^5.7 || ^4.8.35"
             },
             "type": "library",
             "autoload": {
@@ -3986,7 +3986,7 @@
                     "email": "christian@lueck.tv"
                 }
             ],
-            "description": "Trivial timeout implementation for Promises",
+            "description": "A trivial implementation of timeouts for Promises, built on top of ReactPHP.",
             "homepage": "https://github.com/react/promise-timer",
             "keywords": [
                 "async",
@@ -3996,7 +3996,7 @@
                 "timeout",
                 "timer"
             ],
-            "time": "2017-08-08T16:30:19+00:00"
+            "time": "2017-12-22T15:41:41+00:00"
         },
         {
             "name": "react/socket",
@@ -7140,16 +7140,16 @@
         },
         {
             "name": "sebastian/comparator",
-            "version": "2.1.0",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/comparator.git",
-                "reference": "1174d9018191e93cb9d719edec01257fc05f8158"
+                "reference": "b11c729f95109b56a0fe9650c6a63a0fcd8c439f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/1174d9018191e93cb9d719edec01257fc05f8158",
-                "reference": "1174d9018191e93cb9d719edec01257fc05f8158",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/b11c729f95109b56a0fe9650c6a63a0fcd8c439f",
+                "reference": "b11c729f95109b56a0fe9650c6a63a0fcd8c439f",
                 "shasum": ""
             },
             "require": {
@@ -7200,7 +7200,7 @@
                 "compare",
                 "equality"
             ],
-            "time": "2017-11-03T07:16:52+00:00"
+            "time": "2017-12-22T14:50:35+00:00"
         },
         {
             "name": "sebastian/diff",
