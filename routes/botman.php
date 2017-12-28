@@ -9,5 +9,6 @@ $botman->hears('Hi', function ($bot) {
 });
 
 $botman->hears('laravel version', 'App\Botman\LaravelCommand@version');
+$botman->hears('laravel latest', 'App\Botman\LaravelCommand@latest');
 
 $botman->hears('Start conversation', BotManController::class.'@startConversation');
