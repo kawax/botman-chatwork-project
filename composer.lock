@@ -198,16 +198,16 @@
         },
         {
             "name": "botman/botman",
-            "version": "2.1.7",
+            "version": "2.1.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/botman/botman.git",
-                "reference": "87f044364e9505d3d579bf072d511230355207be"
+                "reference": "185853cd48170ff1a065cb8ea9154a82affa8d4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/botman/botman/zipball/87f044364e9505d3d579bf072d511230355207be",
-                "reference": "87f044364e9505d3d579bf072d511230355207be",
+                "url": "https://api.github.com/repos/botman/botman/zipball/185853cd48170ff1a065cb8ea9154a82affa8d4b",
+                "reference": "185853cd48170ff1a065cb8ea9154a82affa8d4b",
                 "shasum": ""
             },
             "require": {
@@ -270,20 +270,20 @@
                 "bot",
                 "chatbot"
             ],
-            "time": "2018-01-12T14:45:37+00:00"
+            "time": "2018-01-19T16:13:47+00:00"
         },
         {
             "name": "botman/driver-web",
-            "version": "1.2.1",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/botman/driver-web.git",
-                "reference": "78f7b186e3928285f0311ba8cf5474c7100566dc"
+                "reference": "1bcbd3bf50f2f5526a55ea655b375bcc6162fccf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/botman/driver-web/zipball/78f7b186e3928285f0311ba8cf5474c7100566dc",
-                "reference": "78f7b186e3928285f0311ba8cf5474c7100566dc",
+                "url": "https://api.github.com/repos/botman/driver-web/zipball/1bcbd3bf50f2f5526a55ea655b375bcc6162fccf",
+                "reference": "1bcbd3bf50f2f5526a55ea655b375bcc6162fccf",
                 "shasum": ""
             },
             "require": {
@@ -292,11 +292,20 @@
             },
             "require-dev": {
                 "botman/driver-facebook": "dev-master",
+                "botman/studio-addons": "~1.0",
                 "ext-curl": "*",
+                "illuminate/contracts": "~5.5.0",
                 "mockery/mockery": "dev-master",
                 "phpunit/phpunit": "~5.0"
             },
             "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "BotMan\\Drivers\\Web\\Providers\\WebServiceProvider"
+                    ]
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "BotMan\\Drivers\\Web\\": "src/"
@@ -319,7 +328,7 @@
                 "bot",
                 "web"
             ],
-            "time": "2017-12-18T11:37:12+00:00"
+            "time": "2018-01-21T20:58:57+00:00"
         },
         {
             "name": "botman/studio-addons",
@@ -385,21 +394,21 @@
         },
         {
             "name": "botman/tinker",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/botman/tinker.git",
-                "reference": "dc8889665f4821e3e9cb98c2559a7a8a8c9cc381"
+                "reference": "73e1ad12497b4f29b69730b9f11e7ac93db1442a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/botman/tinker/zipball/dc8889665f4821e3e9cb98c2559a7a8a8c9cc381",
-                "reference": "dc8889665f4821e3e9cb98c2559a7a8a8c9cc381",
+                "url": "https://api.github.com/repos/botman/tinker/zipball/73e1ad12497b4f29b69730b9f11e7ac93db1442a",
+                "reference": "73e1ad12497b4f29b69730b9f11e7ac93db1442a",
                 "shasum": ""
             },
             "require": {
                 "botman/botman": "~2.0",
-                "clue/stdio-react": "^1.0",
+                "clue/stdio-react": "~1.1.0",
                 "illuminate/support": "~5.0",
                 "php": ">=5.6.0"
             },
@@ -438,20 +447,20 @@
                 "bot",
                 "laravel"
             ],
-            "time": "2017-10-29T08:41:47+00:00"
+            "time": "2018-01-22T09:49:45+00:00"
         },
         {
             "name": "clue/stdio-react",
-            "version": "v1.2.0",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/clue/php-stdio-react.git",
-                "reference": "f751e05a025ddf7bbad53f9dd54333bf3921bd2a"
+                "reference": "f574375d23832c7a86019257238c62dfffa4b962"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/clue/php-stdio-react/zipball/f751e05a025ddf7bbad53f9dd54333bf3921bd2a",
-                "reference": "f751e05a025ddf7bbad53f9dd54333bf3921bd2a",
+                "url": "https://api.github.com/repos/clue/php-stdio-react/zipball/f574375d23832c7a86019257238c62dfffa4b962",
+                "reference": "f574375d23832c7a86019257238c62dfffa4b962",
                 "shasum": ""
             },
             "require": {
@@ -464,7 +473,7 @@
             "require-dev": {
                 "clue/arguments": "^2.0",
                 "clue/commander": "^1.2",
-                "phpunit/phpunit": "^6.4 || ^5.7 || ^4.8.35"
+                "phpunit/phpunit": "^5.0 || ^4.8"
             },
             "suggest": {
                 "ext-mbstring": "Using ext-mbstring should provide slightly better performance for handling I/O"
@@ -498,7 +507,7 @@
                 "stdio",
                 "stdout"
             ],
-            "time": "2017-12-18T10:07:12+00:00"
+            "time": "2017-11-01T16:41:13+00:00"
         },
         {
             "name": "clue/stream-filter",
@@ -1931,16 +1940,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.5.28",
+            "version": "v5.5.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "cfafae1f2043208390a7c984e3070696f4969605"
+                "reference": "254e4c3e133f5bc8d6068cdf28ea062abc10adf2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/cfafae1f2043208390a7c984e3070696f4969605",
-                "reference": "cfafae1f2043208390a7c984e3070696f4969605",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/254e4c3e133f5bc8d6068cdf28ea062abc10adf2",
+                "reference": "254e4c3e133f5bc8d6068cdf28ea062abc10adf2",
                 "shasum": ""
             },
             "require": {
@@ -2061,7 +2070,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-12-26T16:24:40+00:00"
+            "time": "2018-01-18T13:27:23+00:00"
         },
         {
             "name": "laravel/socialite",
@@ -3636,16 +3645,16 @@
         },
         {
             "name": "ramsey/uuid",
-            "version": "3.7.2",
+            "version": "3.7.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ramsey/uuid.git",
-                "reference": "bba83ad77bb9deb6d3c352a7361b818e415b221d"
+                "reference": "44abcdad877d9a46685a3a4d221e3b2c4b87cb76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ramsey/uuid/zipball/bba83ad77bb9deb6d3c352a7361b818e415b221d",
-                "reference": "bba83ad77bb9deb6d3c352a7361b818e415b221d",
+                "url": "https://api.github.com/repos/ramsey/uuid/zipball/44abcdad877d9a46685a3a4d221e3b2c4b87cb76",
+                "reference": "44abcdad877d9a46685a3a4d221e3b2c4b87cb76",
                 "shasum": ""
             },
             "require": {
@@ -3656,17 +3665,15 @@
                 "rhumsaa/uuid": "self.version"
             },
             "require-dev": {
-                "apigen/apigen": "^4.1",
                 "codeception/aspect-mock": "^1.0 | ~2.0.0",
                 "doctrine/annotations": "~1.2.0",
                 "goaop/framework": "1.0.0-alpha.2 | ^1.0 | ^2.1",
                 "ircmaxell/random-lib": "^1.1",
                 "jakub-onderka/php-parallel-lint": "^0.9.0",
-                "mockery/mockery": "^0.9.4",
+                "mockery/mockery": "^0.9.9",
                 "moontoast/math": "^1.1",
                 "php-mock/php-mock-phpunit": "^0.3|^1.1",
                 "phpunit/phpunit": "^4.7|^5.0",
-                "satooshi/php-coveralls": "^0.6.1",
                 "squizlabs/php_codesniffer": "^2.3"
             },
             "suggest": {
@@ -3714,7 +3721,7 @@
                 "identifier",
                 "uuid"
             ],
-            "time": "2018-01-13T22:22:03+00:00"
+            "time": "2018-01-20T00:28:24+00:00"
         },
         {
             "name": "rap2hpoutre/laravel-log-viewer",
@@ -3813,16 +3820,16 @@
         },
         {
             "name": "react/dns",
-            "version": "v0.4.11",
+            "version": "v0.4.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/dns.git",
-                "reference": "8558bba4f2784aa997670d15fc6f7461a8eb4e53"
+                "reference": "c74a0af0c7254e73600fd8c5c95f6bf23c5998f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/dns/zipball/8558bba4f2784aa997670d15fc6f7461a8eb4e53",
-                "reference": "8558bba4f2784aa997670d15fc6f7461a8eb4e53",
+                "url": "https://api.github.com/repos/reactphp/dns/zipball/c74a0af0c7254e73600fd8c5c95f6bf23c5998f4",
+                "reference": "c74a0af0c7254e73600fd8c5c95f6bf23c5998f4",
                 "shasum": ""
             },
             "require": {
@@ -3836,7 +3843,7 @@
             },
             "require-dev": {
                 "clue/block-react": "^1.2",
-                "phpunit/phpunit": "^5.0 || ^4.8.10"
+                "phpunit/phpunit": "^6.4 || ^5.7 || ^4.8.35"
             },
             "type": "library",
             "autoload": {
@@ -3855,7 +3862,7 @@
                 "dns-resolver",
                 "reactphp"
             ],
-            "time": "2017-08-25T08:22:48+00:00"
+            "time": "2018-01-14T10:04:36+00:00"
         },
         {
             "name": "react/event-loop",
