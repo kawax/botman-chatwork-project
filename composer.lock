@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "barryvdh/laravel-debugbar",
-            "version": "v3.1.3",
+            "version": "v3.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-debugbar.git",
-                "reference": "664fa434e26febf04d60df0368303cf0fe14f63a"
+                "reference": "7a91480cc6e597caed5117a3c5d685f06d35c5a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/664fa434e26febf04d60df0368303cf0fe14f63a",
-                "reference": "664fa434e26febf04d60df0368303cf0fe14f63a",
+                "url": "https://api.github.com/repos/barryvdh/laravel-debugbar/zipball/7a91480cc6e597caed5117a3c5d685f06d35c5a1",
+                "reference": "7a91480cc6e597caed5117a3c5d685f06d35c5a1",
                 "shasum": ""
             },
             "require": {
@@ -72,7 +72,7 @@
                 "profiler",
                 "webprofiler"
             ],
-            "time": "2018-02-25T13:31:58+00:00"
+            "time": "2018-03-06T08:35:31+00:00"
         },
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -275,16 +275,16 @@
         },
         {
             "name": "botman/driver-web",
-            "version": "1.5.0",
+            "version": "1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/botman/driver-web.git",
-                "reference": "9d685306388fd1c12d5a8c08d7aee51b9e1ddb95"
+                "reference": "7399fd2994ee4c6c14c0a69268269e81fd2cd7f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/botman/driver-web/zipball/9d685306388fd1c12d5a8c08d7aee51b9e1ddb95",
-                "reference": "9d685306388fd1c12d5a8c08d7aee51b9e1ddb95",
+                "url": "https://api.github.com/repos/botman/driver-web/zipball/7399fd2994ee4c6c14c0a69268269e81fd2cd7f6",
+                "reference": "7399fd2994ee4c6c14c0a69268269e81fd2cd7f6",
                 "shasum": ""
             },
             "require": {
@@ -329,24 +329,24 @@
                 "bot",
                 "web"
             ],
-            "time": "2018-03-06T11:04:46+00:00"
+            "time": "2018-03-27T10:19:41+00:00"
         },
         {
             "name": "botman/studio-addons",
-            "version": "1.2.1",
+            "version": "1.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/botman/studio-addons.git",
-                "reference": "d6b38e3da4562d31c1af300e6427bc4672329998"
+                "reference": "2e6ff1ed9f9ae932b5bb33a85b4bba35bdb6a7d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/botman/studio-addons/zipball/d6b38e3da4562d31c1af300e6427bc4672329998",
-                "reference": "d6b38e3da4562d31c1af300e6427bc4672329998",
+                "url": "https://api.github.com/repos/botman/studio-addons/zipball/2e6ff1ed9f9ae932b5bb33a85b4bba35bdb6a7d0",
+                "reference": "2e6ff1ed9f9ae932b5bb33a85b4bba35bdb6a7d0",
                 "shasum": ""
             },
             "require": {
-                "botman/botman": "~2.0",
+                "botman/botman": "~2.0|~3.0",
                 "guzzlehttp/guzzle": "~6.0",
                 "illuminate/console": "~5.5.0|~5.6.0",
                 "illuminate/contracts": "~5.5.0|~5.6.0",
@@ -390,7 +390,7 @@
                 "bot",
                 "studio"
             ],
-            "time": "2018-02-08T09:13:52+00:00"
+            "time": "2018-03-10T19:42:42+00:00"
         },
         {
             "name": "botman/tinker",
@@ -1554,16 +1554,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.3.0",
+            "version": "6.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699"
+                "reference": "68d0ea14d5a3f42a20e87632a5f84931e2709c90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/f4db5a78a5ea468d4831de7f0bf9d9415e348699",
-                "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/68d0ea14d5a3f42a20e87632a5f84931e2709c90",
+                "reference": "68d0ea14d5a3f42a20e87632a5f84931e2709c90",
                 "shasum": ""
             },
             "require": {
@@ -1573,7 +1573,7 @@
             },
             "require-dev": {
                 "ext-curl": "*",
-                "phpunit/phpunit": "^4.0 || ^5.0",
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4",
                 "psr/log": "^1.0"
             },
             "suggest": {
@@ -1582,7 +1582,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "6.2-dev"
+                    "dev-master": "6.3-dev"
                 }
             },
             "autoload": {
@@ -1615,7 +1615,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2017-06-22T18:50:49+00:00"
+            "time": "2018-03-26T16:33:04+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -1941,16 +1941,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.5.39",
+            "version": "v5.5.40",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "a21ef7e51df831a7c38d24dcf8c4774ee0847526"
+                "reference": "d724ce0aa61bbd9adf658215eec484f5dd6711d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/a21ef7e51df831a7c38d24dcf8c4774ee0847526",
-                "reference": "a21ef7e51df831a7c38d24dcf8c4774ee0847526",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/d724ce0aa61bbd9adf658215eec484f5dd6711d6",
+                "reference": "d724ce0aa61bbd9adf658215eec484f5dd6711d6",
                 "shasum": ""
             },
             "require": {
@@ -1958,7 +1958,7 @@
                 "erusev/parsedown": "~1.7",
                 "ext-mbstring": "*",
                 "ext-openssl": "*",
-                "league/flysystem": "~1.0",
+                "league/flysystem": "^1.0.8",
                 "monolog/monolog": "~1.12",
                 "mtdowling/cron-expression": "~1.0",
                 "nesbot/carbon": "^1.24.1",
@@ -2071,7 +2071,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2018-03-09T17:24:53+00:00"
+            "time": "2018-03-30T13:29:30+00:00"
         },
         {
             "name": "laravel/socialite",
@@ -2662,16 +2662,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.24.1",
+            "version": "1.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "ef12cbd8ba5ce624f0a6a95e0850c4cc13e71e41"
+                "reference": "cbcf13da0b531767e39eb86e9687f5deba9857b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/ef12cbd8ba5ce624f0a6a95e0850c4cc13e71e41",
-                "reference": "ef12cbd8ba5ce624f0a6a95e0850c4cc13e71e41",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/cbcf13da0b531767e39eb86e9687f5deba9857b4",
+                "reference": "cbcf13da0b531767e39eb86e9687f5deba9857b4",
                 "shasum": ""
             },
             "require": {
@@ -2711,7 +2711,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2018-03-09T15:49:34+00:00"
+            "time": "2018-03-19T15:50:49+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -4088,6 +4088,7 @@
             "keywords": [
                 "Socket"
             ],
+            "abandoned": "react/socket",
             "time": "2016-12-06T10:54:49+00:00"
         },
         {
@@ -6081,16 +6082,16 @@
         },
         {
             "name": "laravel/homestead",
-            "version": "v7.2.0",
+            "version": "v7.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/homestead.git",
-                "reference": "f42e0d49542a0ca3f342008db899021b8e794fe0"
+                "reference": "9f3654533723a792df2327b99e127d20be22e725"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/homestead/zipball/f42e0d49542a0ca3f342008db899021b8e794fe0",
-                "reference": "f42e0d49542a0ca3f342008db899021b8e794fe0",
+                "url": "https://api.github.com/repos/laravel/homestead/zipball/9f3654533723a792df2327b99e127d20be22e725",
+                "reference": "9f3654533723a792df2327b99e127d20be22e725",
                 "shasum": ""
             },
             "require": {
@@ -6127,7 +6128,7 @@
                 }
             ],
             "description": "A virtual machine for web artisans.",
-            "time": "2018-03-06T18:32:42+00:00"
+            "time": "2018-03-12T19:16:22+00:00"
         },
         {
             "name": "mockery/mockery",
