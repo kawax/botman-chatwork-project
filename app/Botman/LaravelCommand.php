@@ -13,7 +13,7 @@ class LaravelCommand
 
         info($release);
 
-        $reply = $release['name'] . PHP_EOL . $release['html_url'] . PHP_EOL . '[info]' . $release['body'] . '[/info]';
+        $reply = $release['tag_name'] . PHP_EOL . $release['html_url'] . PHP_EOL . '[info]' . $release['body'] . '[/info]';
 
         $bot->reply($reply);
     }
@@ -24,7 +24,7 @@ class LaravelCommand
 
         //        info($tags);
 
-        $version = $tags[0]['name'];
+        $version = $tags[0]['tag_name'];
 
         $bot->reply($version);
     }

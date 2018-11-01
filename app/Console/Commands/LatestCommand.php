@@ -42,7 +42,7 @@ class LatestCommand extends Command
     {
         $release = Github::repo()->releases()->latest('laravel', 'framework');
 
-        $ver = $release['name'];
+        $ver = $release['tag_name'];
 
         if ($ver === cache('latest_ver')) {
             return;
@@ -50,7 +50,7 @@ class LatestCommand extends Command
 
         cache()->forever('latest_ver', $ver);
 
-        $reply = $release['name'] . PHP_EOL . $release['html_url'] . PHP_EOL . '[info]' . $release['body'] . '[/info]';
+        $reply = $release['tag_name'] . PHP_EOL . $release['html_url'] . PHP_EOL . '[info]' . $release['body'] . '[/info]';
 
         $botman = app('botman');
 
