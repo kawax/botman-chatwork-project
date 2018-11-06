@@ -24,7 +24,7 @@ class LaravelCommand
 
         //        info($tags);
 
-        $version = $tags[0]['tag_name'];
+        $version = $tags[0]['name'];
 
         $bot->reply($version);
     }
